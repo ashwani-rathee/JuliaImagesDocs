@@ -3,6 +3,15 @@ using MultiDocumenter
 clonedir = mktempdir()
 
 docs = [
+    MultiDocumenter.MultiDocRef(
+        upstream = joinpath(clonedir, "Home"),
+        path = "stable",
+        name = "Home",
+        giturl = "https://github.com/JuliaImages/juliaimages.github.io.git",
+        branch = "master",
+        # or use ssh instead for private repos:
+        # giturl = "git@github.com:JuliaComputing/DataSets.jl.git",
+    ),
     MultiDocumenter.MegaDropdownNav("Package Ecosystem", [
         MultiDocumenter.Column("High Level Packages", [
             MultiDocumenter.MultiDocRef(
@@ -70,14 +79,7 @@ docs = [
             ),
         ]),
     ]),
-    # MultiDocumenter.MultiDocRef(
-    #     upstream = joinpath(clonedir, "DataSets"),
-    #     path = "data",
-    #     name = "DataSets",
-    #     giturl = "https://github.com/JuliaComputing/DataSets.jl.git",
-    #     # or use ssh instead for private repos:
-    #     # giturl = "git@github.com:JuliaComputing/DataSets.jl.git",
-    # ),
+
 ]
 
 outpath = joinpath(@__DIR__, "out")
