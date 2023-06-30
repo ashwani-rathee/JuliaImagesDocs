@@ -1,4 +1,4 @@
-name = "JuliaImagesDocs.jl"
+name = "JuliaImagesDocs"
 uuid = "0c275f74-ee56-424f-a19e-b5e11953da87"
 authors = ["ashwani rathee <ab669522@gmail.com>"]
 version = "0.1.0"
