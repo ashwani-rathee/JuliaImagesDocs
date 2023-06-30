@@ -5,7 +5,7 @@ clonedir = mktempdir()
 docs = [
     MultiDocumenter.MultiDocRef(
         upstream = joinpath(clonedir, "ImageFiltering"),
-        path = "imgfilter",
+        path = "filter",
         name = "ImageFiltering",
         giturl = "https://github.com/JuliaImages/ImageFiltering.jl.git",
     ),
@@ -24,10 +24,9 @@ docs = [
             # ImageInpainting.jl provides image inpainting algorithms in Julia
             MultiDocumenter.MultiDocRef(
                 upstream = joinpath(clonedir, "ImageFiltering"),
-                path = "imgfilter",
+                path = "filter",
                 name = "ImageFiltering",
                 giturl = "https://github.com/JuliaImages/ImageFiltering.jl.git",
-                branch = "stable"
             ),
             MultiDocumenter.MultiDocRef(
                 upstream = joinpath(clonedir, "DitherPunk"),
@@ -35,30 +34,30 @@ docs = [
                 name = "DitherPunk",
                 giturl = "https://github.com/JuliaImages/DitherPunk.jl.git",
             ),
-            # MultiDocumenter.MultiDocRef(
-            #     upstream = joinpath(clonedir, "ImageBinarization.jl"),
-            #     path = "debug",
-            #     name = "ImageBinarization",
-            #     giturl = "https://github.com/JuliaImages/ImageBinarization.jl.git",
-            # ),
-            # MultiDocumenter.MultiDocRef(
-            #     upstream = joinpath(clonedir, "ImageContrastAdjustment.jl"),
-            #     path = "debug",
-            #     name = "ImageContrastAdjustment",
-            #     giturl = "https://github.com/JuliaImages/ImageContrastAdjustment.jl.git"
-            # ),
-            # MultiDocumenter.MultiDocRef(
-            #     upstream = joinpath(clonedir, "ImageMorphology.jl"),
-            #     path = "debug",
-            #     name = "ImageMorphology",
-            #     giturl = "https://github.com/JuliaImages/ImageMorphology.jl.git"
-            # ),
-            # MultiDocumenter.MultiDocRef(
-            #     upstream = joinpath(clonedir, "ImageFeatures.jl"),
-            #     path = "debug",
-            #     name = "ImageFeatures",
-            #     giturl = "https://github.com/JuliaImages/ImageFeatures.jl.git"
-            # ),
+            MultiDocumenter.MultiDocRef(
+                upstream = joinpath(clonedir, "ImageBinarization.jl"),
+                path = "binarize",
+                name = "ImageBinarization",
+                giturl = "https://github.com/JuliaImages/ImageBinarization.jl.git",
+            ),
+            MultiDocumenter.MultiDocRef(
+                upstream = joinpath(clonedir, "ImageContrastAdjustment.jl"),
+                path = "contrast",
+                name = "ImageContrastAdjustment",
+                giturl = "https://github.com/JuliaImages/ImageContrastAdjustment.jl.git"
+            ),
+            MultiDocumenter.MultiDocRef(
+                upstream = joinpath(clonedir, "ImageMorphology.jl"),
+                path = "morphology",
+                name = "ImageMorphology",
+                giturl = "https://github.com/JuliaImages/ImageMorphology.jl.git"
+            ),
+            MultiDocumenter.MultiDocRef(
+                upstream = joinpath(clonedir, "ImageFeatures.jl"),
+                path = "features",
+                name = "ImageFeatures",
+                giturl = "https://github.com/JuliaImages/ImageFeatures.jl.git"
+            ),
 
             # MultiDocumenter.MultiDocRef(
             #     upstream = joinpath(clonedir, "ImageQualityIndexes.jl"),
@@ -220,5 +219,4 @@ MultiDocumenter.make(
         index_versions = ["stable"],
         engine = MultiDocumenter.FlexSearch
     ),
-    rootpath = "/stable/",
 )
