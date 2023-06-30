@@ -3,7 +3,7 @@ using MultiDocumenter
 clonedir = mktempdir()
 
 docs = [
-    MultiDocumenter.MegaDropdownNav("Mega Debugger", [
+    MultiDocumenter.MegaDropdownNav("Package Ecosystem", [
         MultiDocumenter.Column("High Level Packages", [
             MultiDocumenter.MultiDocRef(
                 upstream = joinpath(clonedir, "ImageFiltering"),
@@ -11,36 +11,73 @@ docs = [
                 name = "ImageFiltering",
                 giturl = "https://github.com/JuliaImages/ImageFiltering.jl.git",
             ),
+
             MultiDocumenter.MultiDocRef(
                 upstream = joinpath(clonedir, "DitherPunk"),
                 path = "dither",
                 name = "DitherPunk",
                 giturl = "https://github.com/JuliaImages/DitherPunk.jl.git",
             ),
-        ]),
-        MultiDocumenter.Column("Visualisation", [
+            # QRCoders.jl
             MultiDocumenter.MultiDocRef(
-                upstream = joinpath(clonedir, "ImageView"),
-                path = "imgview",
-                name = "ImageView",
-                giturl = "https://github.com/JuliaImages/ImageView.jl.git",
+                upstream = joinpath(clonedir, "QRCoders"),
+                path = "qrcoders",
+                name = "QRCoders",
+                giturl = "https://github.com/JuliaImages/QRCoders.jl.git",
             ),
+            # ImageTransformations
             MultiDocumenter.MultiDocRef(
-                upstream = joinpath(clonedir, "ImageInTerminal"),
-                path = "imginterminal",
-                name = "ImageInTerminal",
-                giturl = "https://github.com/JuliaImages/ImageInTerminal.jl.git",
+                upstream = joinpath(clonedir, "ImageTransformations"),
+                path = "transformations",
+                name = "ImageTransformations",
+                giturl = "https://github.com/JuliaImages/ImageTransformations.jl.git",
+            ),
+            # ImageFeatures
+            MultiDocumenter.MultiDocRef(
+                upstream = joinpath(clonedir, "ImageFeatures"),
+                path = "features",
+                name = "ImageFeatures",
+                giturl = "https://github.com/JuliaImages/ImageFeatures.jl.git",
+            ),
+            # ImageBinarization.jl
+            MultiDocumenter.MultiDocRef(
+                upstream = joinpath(clonedir, "ImageBinarization"),
+                path = "binarization",
+                name = "ImageBinarization",
+                giturl = "https://github.com/JuliaImages/ImageBinarization.jl.git",
+            ),
+            # ExifViewer
+            MultiDocumenter.MultiDocRef(
+                upstream = joinpath(clonedir, "ExifViewer"),
+                path = "exif",
+                name = "ExifViewer",
+                giturl = "https://github.com/JuliaImages/ExifViewer.jl.git",
+            ),
+            # ImageMorphology
+            MultiDocumenter.MultiDocRef(
+                upstream = joinpath(clonedir, "ImageMorphology"),
+                path = "morphology",
+                name = "ImageMorphology",
+                giturl = "https://github.com/JuliaImages/ImageMorphology.jl.git",
+            ),
+        ]),
+        MultiDocumenter.Column("Visualisation & Drawing", [
+            MultiDocumenter.MultiDocRef(
+                upstream = joinpath(clonedir, "ImageDraw"),
+                path = "imgdraw",
+                name = "ImageDraw",
+                giturl = "https://github.com/JuliaImages/ImageDraw.jl.git",
             ),
         ]),
     ]),
-    MultiDocumenter.MultiDocRef(
-        upstream = joinpath(clonedir, "DataSets"),
-        path = "data",
-        name = "DataSets",
-        giturl = "https://github.com/JuliaComputing/DataSets.jl.git",
-        # or use ssh instead for private repos:
-        # giturl = "git@github.com:JuliaComputing/DataSets.jl.git",
-    ),
+    # MultiDocumenter.MultiDocRef(
+    #     upstream = joinpath(clonedir, "DataSets"),
+    #     path = "data",
+    #     name = "DataSets",
+    #     giturl = "https://github.com/JuliaComputing/DataSets.jl.git",
+    #     # or use ssh instead for private repos:
+    #     # giturl = "git@github.com:JuliaComputing/DataSets.jl.git",
+    # ),
 ]
 
 outpath = joinpath(@__DIR__, "out")
